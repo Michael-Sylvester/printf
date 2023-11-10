@@ -4,19 +4,21 @@
  * _print_string - writes string to stdout
  * @str: The character to print
  *
- * Return: On success 1.
+ * Return: the cumber of char in the string
  * 
  */
-void print_string(char * str)
+int print_string(char * str)
 {
-  int x = 0; 			/* iterates through string */
+  int count = 0; 			/* iterates through string */
 
   if (str != NULL)
     {
-  while(str[x] != '\0')
+  while(str[count] != '\0')
     {
-      collab_putchar(str[x]);
-      x++;
+      collab_putchar(str[count]);
+      count++;
     } /* end of while loop */
     } /* end of if statement */
+
+  return (count);
 }

@@ -5,7 +5,7 @@
  * @args: Arguments to print
  * Return: An integer
  */
-void print_int(int n)
+int print_int(int n)
 {    
     int num, last_digit = n % 10, digit, power_of_10 = 1;
     int count = 1;  /* initialized count to 1 */
@@ -39,5 +39,5 @@ void print_int(int n)
         }
     }
     collab_putchar(last_digit + '0');
-    
+    return (count); 
 }

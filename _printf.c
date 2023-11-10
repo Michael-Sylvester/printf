@@ -11,11 +11,13 @@ int _printf(const char *format, ...)
    * va_arg(list_name, next_format_specifier_data_type)
  */
   int i;
+  int sum;
   char c;
   char * str;
   va_list ap;
   
   va_start(ap, format);
+  sum = 0;
   while(*format != '\0')
     {
       if(*format == '%')
@@ -26,25 +28,26 @@ int _printf(const char *format, ...)
 	    case 'd':
 	      /* print interger function */
 	      i = va_arg(ap, int);
-	       print_int(i);	
+	     sum += print_int(i);	
 	      format++;
 	      break;
 	    case 'i':
 	      /* print integer function */
 	      i = va_arg(ap, int);
-	       print_int(i);
+	      sum += print_int(i);
 	      format++;
 	      break;
 	    case 'c':
 	      /* print character function */
 	      c = (char)va_arg(ap, int);
 	      collab_putchar(c);
+	      sum += 1;
 	      format++;
 	      break;
 	    case 's':
 	      /* print string function */
 	      str = va_arg(ap, char *);
-	      print_string(str);
+	      sum += print_string(str);
 	      format++;
 	      break;
 	    default:
@@ -54,8 +57,9 @@ int _printf(const char *format, ...)
 	}     /* end of if statement */
       /* if keyword not available print current member of format string */
       collab_putchar(*format);
+      sum += 1;
       format++;  
     } /* end of while loop */
   va_end(ap);
-  return (0);
+  return (sum);
 }
