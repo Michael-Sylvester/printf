@@ -5,11 +5,10 @@
  * @args: Arguments to print
  * Return: An integer
  */
-int print_i(va_list args)
-{
-	int n = va_arg(args, int);
-	int num, last_digit = n % 10, digit, power_of_10 = 1;
-	int count = 1;  /* initialized count to 1 */
+void print_int(int n)
+{    
+    int num, last_digit = n % 10, digit, power_of_10 = 1;
+    int count = 1;  /* initialized count to 1 */
 
 	n = n / 10;
 	num = n;
