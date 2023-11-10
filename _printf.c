@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <string.h>
 #include "main.h"
 /* *
  * _printf - a function to replicate the workings of printf
@@ -39,7 +36,7 @@ int _printf(const char *format, ...)
 	    case 'c':
 	      /* print character function */
 	      c = (char)va_arg(ap, int);
-	      _putchar(i);
+	      collab_putchar(i);
 	      break;
 	    case 's':
 	      /* print string function */
@@ -51,7 +48,7 @@ int _printf(const char *format, ...)
 	    } /* end of switch statement */
 	}     /* end of if statement */
       /* if keyword not available print current member of format string */
-      _putchar(*format);
+      collab_putchar(*format);
       format++;  
     } /* end of while loop */
   va_end(ap);

@@ -1,6 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
+
 /**
  * _print_string - writes string to stdout
  * @str: The character to print
@@ -16,7 +15,7 @@ void print_string(char * str)
     {
   while(str[x] != '\0')
     {
-      _putchar(str[x]);
+      collab_putchar(str[x]);
       x++;
     } /* end of while loop */
     } /* end of if statement */
