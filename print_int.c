@@ -14,7 +14,7 @@ int print_i(va_list args)
 	n = n / 10;
 	num = n;
 
-	if (last < 0)
+	if (last_digit < 0)
 	{
 		collab_putchar('-');
 		num = -num;
