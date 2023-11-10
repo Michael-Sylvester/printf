@@ -26,24 +26,29 @@ int _printf(const char *format, ...)
 	    case 'd':
 	      /* print interger function */
 	      i = va_arg(ap, int);
-	      print_int(i);	
+	      // print_int(i);	
+	      format++;
 	      break;
 	    case 'i':
 	      /* print integer function */
 	      i = va_arg(ap, int);
-	      print_int(i);
+	      // print_int(i);
+	      format++;
 	      break;
 	    case 'c':
 	      /* print character function */
 	      c = (char)va_arg(ap, int);
-	      collab_putchar(i);
+	      collab_putchar(c);
+	      format++;
 	      break;
 	    case 's':
 	      /* print string function */
 	      str = va_arg(ap, char *);
 	      print_string(str);
+	      format++;
 	      break;
 	    default:
+	      format++;
 	      break;
 	    } /* end of switch statement */
 	}     /* end of if statement */
