@@ -69,6 +69,6 @@ int print_int(int n)
 	}
 	collab_putchar(last_digit + '0');
 	return (count);
->>>>>>> 5ae7d02da45edffd02d0463786c2bf9042c595da
+
 }
     */
