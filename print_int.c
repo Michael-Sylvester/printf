@@ -10,8 +10,8 @@ void print_int(int n)
     int num, last_digit = n % 10, digit, power_of_10 = 1;
     int count = 1;  /* initialized count to 1 */
 
-    n = n / 10;
-    num = n;
+	n = n / 10;
+	num = n;
 
     if (last_digit < 0)
     {
