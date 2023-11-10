@@ -34,18 +34,6 @@ void myprintf(const char *format, ...)
 	    case 's':
 	      /* print string function */
 	      break;
-	    case 'u':
-	      /* print unsigned int function */
-	      break;
-	    case 'x':
-	      /* prints unsigned int in hexadecimal function*/
-	      break;
-	    case 'f':
-	      /* print floatinf point number function */
-	      break;
-	    case 'p':
-	      /* print pointer fucntion */
-	      break;
 	    }
 	}     /* if keyword not available print current member of format  */
       _putchar(*format);
