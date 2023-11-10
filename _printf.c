@@ -26,13 +26,13 @@ int _printf(const char *format, ...)
 	    case 'd':
 	      /* print interger function */
 	      i = va_arg(ap, int);
-	      // print_int(i);	
+	       print_int(i);	
 	      format++;
 	      break;
 	    case 'i':
 	      /* print integer function */
 	      i = va_arg(ap, int);
-	      // print_int(i);
+	       print_int(i);
 	      format++;
 	      break;
 	    case 'c':
