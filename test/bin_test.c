@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-  print_b(55);
+  print_b(98);
   puts("");
 }
