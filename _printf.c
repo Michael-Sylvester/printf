@@ -17,6 +17,9 @@ int _printf(const char *format, ...)
   char c;
   char * str;
   va_list ap;
+
+  if (format == NULL)
+    return (0);
   
   va_start(ap, format);
   sum = 0;
