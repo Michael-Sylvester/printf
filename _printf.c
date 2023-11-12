@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
 	      break;
             case 'b';
               /* print binary function */
-              b = va_arg(ap, unsigned int);
+              b = va_arg(ap, unsigned int b);
               sum += print_b(b);
 	      format++;
 	      break;
