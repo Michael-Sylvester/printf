@@ -11,4 +11,5 @@ int main(void)
 {
   print_b(98);
   puts("");
+  return (0);
 }
