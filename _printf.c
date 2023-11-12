@@ -55,6 +55,12 @@ int _printf(const char *format, ...)
 	      sum += print_string(str);
 	      format++;
 	      break;
+            case 'b';
+              /* print binary function */
+              b = va_arg(ap, unsigned int);
+              sum += print_b(b);
+	      format++;
+	      break;
 	    default:
 	      format++;
 	      break;
