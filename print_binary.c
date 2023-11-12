@@ -5,7 +5,7 @@
  * @val: The function param
  * Return: An integer
  */
-int print_b(va_list val)
+int print_b(int num)
 {
 	int flag = 0;
 	int count = 0;
