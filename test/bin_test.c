@@ -10,4 +10,5 @@
 int main(void)
 {
   print_b(55);
+  puts("");
 }
