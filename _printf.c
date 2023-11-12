@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /* *
  * _printf - a function to replicate the workings of printf
  * @format : the string entered by the user
@@ -11,7 +12,8 @@ int _printf(const char *format, ...)
    * va_arg(list_name, next_format_specifier_data_type)
  */
   int i;
-  int sum;
+  int sum = 0;
+  
   char c;
   char * str;
   va_list ap;
@@ -28,7 +30,7 @@ int _printf(const char *format, ...)
 	    case 'd':
 	      /* print interger function */
 	      i = va_arg(ap, int);
-	     sum += print_int(i);	
+	      sum += print_d(i);
 	      format++;
 	      break;
 	    case 'i':
@@ -41,7 +43,7 @@ int _printf(const char *format, ...)
 	      /* print character function */
 	      c = (char)va_arg(ap, int);
 	      collab_putchar(c);
-	      sum += 1;
+	      sum++;
 	      format++;
 	      break;
 	    case 's':
@@ -57,9 +59,11 @@ int _printf(const char *format, ...)
 	}     /* end of if statement */
       /* if keyword not available print current member of format string */
       collab_putchar(*format);
-      sum += 1;
+      sum++;
       format++;  
     } /* end of while loop */
   va_end(ap);
+
+
   return (sum);
 }

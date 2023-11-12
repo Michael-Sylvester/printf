@@ -3,10 +3,13 @@
 
 int main(void)
 {
+  int sum;
   int num = 5; 
-  print_int(55);
-  puts("");
+sum = print_int(5500100);
+ printf("\t%i\n",sum);
+ 
   print_int(num);
-
+  printf("\n");
+  
   return (0);
 }

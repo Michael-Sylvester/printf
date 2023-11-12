@@ -12,22 +12,34 @@ int main(void)
   int num = 500;
   int ans = 0;
   
-ans = _printf("String literals are accepted");
+  
+ans = _printf("String literals are accepted ");
+ printf("\t_Total = %i\n", ans);
+ ans = printf("String literals are accepted ");
  printf("\tTotal = %i\n", ans);
+ 
+ ans = _printf("%s", str);
+  printf("\t_Total = %i\n", ans);
+  ans = printf("%s", str);                                                                    printf("\tTotal = %i\n", ans);
 
-  _printf("%s", str);
+ans = _printf("%c placed in one character which was \"I\"", i);
+  printf("\t_Total = %i\n", ans);
+  ans = printf("%c placed in one character which was \"I\"", i);
   printf("\tTotal = %i\n", ans);
 
-  _printf("%c placed in one character which was \"I\"", i);
-  printf("\tTotal = %i\n", ans);
-
-_printf("the number %d has appeared as d", num);
+ans = _printf("the number %d has appeared as d", num);
+ printf("\t_Total = %i\n", ans);
+ ans = printf("the number %d has appeared as d", num);
  printf("\tTotal = %i\n", ans);
 
-_printf("the number %i has appeared again as i", num);
+ans = _printf("the number %i has appeared again as i", num);
+ printf("\t_Total = %i\n", ans);
+ ans = printf("the number %i has appeared again as i", num);
  printf("\tTotal = %i\n", ans);
 
-_printf("%s as well as chars like \"%c\" and int like \"%d\"", str, i, num);
+ans = _printf("%s as well as chars like \"%c\" and int like \"%d\"", str, i, num);
+ printf("\t_Total = %i\n", ans);
+ ans = printf("%s as well as chars like \"%c\" and int like \"%d\"", str, i, num);
  printf("\tTotal = %i\n", ans);
 
 return (0);
