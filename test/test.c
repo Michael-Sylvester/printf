@@ -42,5 +42,8 @@ ans = _printf("%s as well as chars like \"%c\" and int like \"%d\"", str, i, num
  ans = printf("%s as well as chars like \"%c\" and int like \"%d\"", str, i, num);
  printf("\tTotal = %i\n", ans);
 
+ ans = _printf("the Number 98 appears as %b in binary", 98);
+ printf("\t_Total = %i\n", ans);
+ 
 return (0);
 }
