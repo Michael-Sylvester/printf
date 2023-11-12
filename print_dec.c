@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * print_i - This function prints an integer
- * @args: Arguments to print
+ * print_d - This function prints a decimal
+ * @args: The argument to print
  * Return: An integer
  */
-int print_i(va_list args)
+
+int print_d(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, last_digit = n % 10, digit, power_of_10 = 1;
@@ -15,11 +16,11 @@ int print_i(va_list args)
 	num = n;
 	if (last_digit < 0)
 	{
-		collab_putchar('-');
-		num = -num;
-		n = -n;
-		last_digit = -last_digit;
-		count++;
+	collab_putchar('-');
+	num = -num;
+	n = -n;
+	last_digit = -last_digit;
+	count++;
 	}
 	if (num > 0)
 	{
