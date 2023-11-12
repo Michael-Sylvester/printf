@@ -62,7 +62,15 @@ int _printf(const char *format, ...)
               sum += print_b(b);
 	      format++;
 	      break;
+	    case '%':
+	      /* print % sign */
+	      collab_putchar(*format);
+	      sum++;
+	      format++;
+	      break;
 	    default:
+	      collab_putchar('%');
+	      collab_putchar(*format);
 	      format++;
 	      break;
 	    } /* end of switch statement */
