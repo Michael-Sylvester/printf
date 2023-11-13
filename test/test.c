@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "../main.h"
 /* main - Used to test the _printf function 
 *
@@ -7,20 +8,21 @@
 
 int main(void)
 {
-  char * str = "String pointers also work";
+  char *str = "String pointers also work";
   char i = 'I';
   int num = 500;
   int ans = 0;
   
   
-ans = _printf("String literals are accepted ");
+ans = _printf("String literals are accepted");
  printf("\t_Total = %i\n", ans);
- ans = printf("String literals are accepted ");
+ ans = printf("String literals are accepted");
  printf("\tTotal = %i\n", ans);
  
  ans = _printf("%s", str);
-  printf("\t_Total = %i\n", ans);
-  ans = printf("%s", str);                                                                    printf("\tTotal = %i\n", ans);
+ printf("\t_Total = %i\n", ans);
+ ans = printf("%s", str);
+ printf("\tTotal = %i\n", ans);
 
 ans = _printf("%c placed in one character which was \"I\"", i);
   printf("\t_Total = %i\n", ans);

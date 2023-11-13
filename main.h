@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 
 int collab_putchar(char c);
 int _printf(const char *format, ...);

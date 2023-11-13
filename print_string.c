@@ -11,14 +11,11 @@ int print_string(char * str)
 {
   int count = 0; 			/* iterates through string */
 
-  if (str != NULL)
-    {
-  while(str[count] != '\0')
+  while(str[count])
     {
       collab_putchar(str[count]);
       count++;
     } /* end of while loop */
-    } /* end of if statement */
 
-  return (count);
+  return (count-1);
 }
