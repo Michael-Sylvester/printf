@@ -10,7 +10,6 @@
 
 
 /* funtions calls for format specifier implementation */
-int print_unknown(int add,const char *format);
 int collab_putchar(char c);
 int _printf(const char *format, ...);
 int print_string(char *str);
@@ -29,16 +28,8 @@ int print_hex_more(unsigned int num);
 
 
 /* printf_ops function declarations to call above functions*/
-int call_d(char *format);
-int call_i(char *format);
-int call_c(char *format);
-int call_s(char *format);
-int call_b(char *format);
-int call_perc(char *format);
-int call_p(char *format);
-int call_H(char *format);
-int call_h(char *format);
-int call_o(char *format);
-
+int _printf_specifier(char format, va_list ap);
+int _printf_specifier2(char format, va_list ap);
+int print_unknown(int add,char format); 
 
 #endif
