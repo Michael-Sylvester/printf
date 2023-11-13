@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 					break;
 				} /* end of switch statement */
 		}     /* end of if statement */
-								
+
 		collab_putchar(*format);
 		sum++;
 		format++;
@@ -138,4 +138,3 @@ int _printf_specifier2(char format, va_list ap)
 		}
 	return (sum);
 }
-
