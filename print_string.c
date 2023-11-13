@@ -17,5 +17,5 @@ int print_string(char *str)
 		count++;
 	} /* end of while loop */
 
-	return (count - 1);
+	return (count);
 }
