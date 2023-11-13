@@ -1,74 +1,75 @@
 #include "main.h"
 
 /**
- * print_hexadecimal - This prints an unsigned number in hexadec
- * @types: The list of arguments passed
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: To get width
- * @precision: Precision specification
- * @size: Size specification
- * Return: The num of chars printed
+ * print_hexa - calculates the num of hexa digits and allocates memory
+ * @num: number to convert
+ * @counter: The pointer to store the count of hexa digits.
+ * Return: array of hex digits.
  */
-int print_hexadecimal(va_list types, char buffer[],
-int flags, int width, int precision, int size)
+int *print_hexa(unsigned int num, int *counter)
 {
-	return (print_hexa(types, "0123456789abcdef", buffer, flags,
-'x', width, precision, size));
-}
+	int x;
+	int *array;
+	unsigned int temp = num;
 
-/**
- * print_hexa_upper - This  prints an unsigned num in upper hexadec
- * @types: The list of arguments passed
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: To get width
- * @precision: Precision specification
- * @size: Size specification
- * Return: The num of chars printed
- */
-int print_hexa_upper(va_list types, char buffer[],
-int flags, int width, int precision, int size)
-{
-	return (print_hexa(types, "0123456789ABCDEF", buffer, flags,
-'X', width, precision, size));
-}
-
-/**
- * print_hexa - This prints a hexadec number in lower or upper
- * @types: The list of arguments passed
- * @map_to: Array of values to map the num
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @flag_ch: Calculates active flags
- * @width: To get width
- * @precision: Precision specification
- * @size: Size specification
- * Return: The num of chars printed
- */
-int print_hexa(va_list types, char map_to[], char buffer[],
-int flags, char flag_ch, int width, int precision, int size)
-{
-	int x = BUFF_SIZE - 2;
-	unsigned long int num = va_arg(types, unsigned long int);
-	unsigned long int init_num = num;
-
-	UNUSED(width);
-	num = convert_size_unsgnd(num, size);
-	if (num == 0)
-	buffer[x--] = '0';
-	buffer[BUFF_SIZE - 1] = '\0';
-	while (num > 0)
+	while (num / 16 != 0)
 	{
-		buffer[x--] = map_to[num % 16];
 		num /= 16;
+		(*counter)++;
 	}
-	if (flags & F_HASH && init_num != 0)
+	(*counter)++;
+	array = malloc((*counter) * sizeof(int));
+
+	for (x = 0; x < (*counter); x++)
 	{
-		buffer[x--] = flag_ch;
-		buffer[x--] = '0';
+		array[x] = temp % 16;
+		temp /= 16;
 	}
 
-	x++;
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (array);
+}
+
+/**
+ * print_hex - This prints a hexa num
+ * @val: The arguments passed
+ * Return: counter
+ */
+int print_hex(va_list val)
+{
+	int counter = 0;
+	unsigned int num = va_arg(val, unsigned int);
+	int *array = print_hexa(num, &counter);
+	int x;
+
+	for (x = counter - 1; x >= 0; x--)
+	{
+		if (array[x] > 9)
+		array[x] += 7;
+		collab_putchar(array[x] + '0');
+	}
+
+	free(array);
+	return (counter);
+}
+
+/**
+ * print_hex_more - This prints a hexa num
+ * @num: The parameter
+ * Return: counter
+ */
+int print_hex_more(unsigned int num)
+{
+	int counter = 0;
+	int *array = print_hexa(num, &counter);
+	int x;
+
+	for (x = counter - 1; x >= 0; x--)
+	{
+		if (array[x] > 9)
+		array[x] += 7;
+		collab_putchar(array[x] + '0');
+	}
+
+	free(array);
+	return (counter);
 }
