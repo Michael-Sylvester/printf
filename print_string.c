@@ -15,7 +15,7 @@ int print_s(va_list val)
 	if (s == NULL)
 		s = "(null)";
 
-	len = _strlen(s);
+	len = strlen(s);
 	for (x = 0; x < len; x++)
 		collab_putchar(s[x]);
 
