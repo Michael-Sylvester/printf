@@ -37,12 +37,14 @@ int _printf(const char *format, ...)
 	      sum += print_d(i);
 	      format++;
 	      break;
+
 	    case 'i':
 	      /* print integer function */
 	      i = va_arg(ap, int);
 	      sum += print_int(i);
 	      format++;
 	      break;
+
 	    case 'c':
 	      /* print character function */
 	      c = (char)va_arg(ap, int);
@@ -50,20 +52,35 @@ int _printf(const char *format, ...)
 	      sum++;
 	      format++;
 	      break;
+
 	    case 's':
 	      /* print string function */
 	      str = va_arg(ap, char *);
+	      if (str != NULL)
 	      sum += print_string(str);
+	   
 	      format++;
 	      break;
+
             case 'b':
               /* print binary function */
               b = va_arg(ap, unsigned int);
               sum += print_b(b);
 	      format++;
 	      break;
-	    default:
+
+	    case '%':
+	      /* print % sign */
+	      collab_putchar(*format);
+	      sum++;
 	      format++;
+	      break;
+
+	    default:
+	      collab_putchar('%');
+	      collab_putchar(*format);
+	      format++;
+	      sum += 2;
 	      break;
 	    } /* end of switch statement */
 	}     /* end of if statement */
