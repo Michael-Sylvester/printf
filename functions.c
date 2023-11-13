@@ -9,6 +9,7 @@
 int *print_hexa(unsigned int num, int *counter)
 {
 	int x;
+	int *array;
 	unsigned int temp = num;
 
 	while (num / 16 != 0)
@@ -17,7 +18,7 @@ int *print_hexa(unsigned int num, int *counter)
 		(*counter)++;
 	}
 	(*counter)++;
-	int *array = malloc((*counter) * sizeof(int));
+	array = malloc((*counter) * sizeof(int));
 
 	for (x = 0; x < (*counter); x++)
 	{
@@ -38,8 +39,9 @@ int print_hex(va_list val)
 	int counter = 0;
 	unsigned int num = va_arg(val, unsigned int);
 	int *array = print_hexa(num, &counter);
+	int x;
 
-	for (int x = counter - 1; x >= 0; x--)
+	for (x = counter - 1; x >= 0; x--)
 	{
 		if (array[x] > 9)
 		array[x] += 7;
@@ -59,8 +61,9 @@ int print_hex_more(unsigned int num)
 {
 	int counter = 0;
 	int *array = print_hexa(num, &counter);
+	int x;
 
-	for (int x = counter - 1; x >= 0; x--)
+	for (x = counter - 1; x >= 0; x--)
 	{
 		if (array[x] > 9)
 		array[x] += 7;
