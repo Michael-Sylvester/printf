@@ -20,6 +20,7 @@ int print_octal(unsigned int);
 int *print_hexa(unsigned int num, int *counter);
 int print_hex(va_list val);
 int print_hex_more(unsigned int num);
+int print_rot13(va_list args);
 
 
 #endif
