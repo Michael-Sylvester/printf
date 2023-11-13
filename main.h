@@ -16,6 +16,9 @@
 #define F_HASH 8
 #define F_SPACE 16
 
+#define S_LONG 2
+#define S_SHORT 1
+
 int collab_putchar(char c);
 int _printf(const char *format, ...);
 int print_string(char *str);
