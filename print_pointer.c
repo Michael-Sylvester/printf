@@ -2,7 +2,7 @@
 
 /**
  * print_pointer - This function prints a decimal
- * @p: The argument to print
+ * @ptr: The argument to print
  * Return: An integer
  */
 
@@ -10,13 +10,14 @@ int print_pointer(void *ptr)
 {
   unsigned long address = (unsigned long)ptr; /* Cast the pointer to an unsigned long */
   int count = 0;
+  int i;
   int hex_digit;
   /* Print the address in hexadecimal format */
   collab_putchar('0');
   collab_putchar('x');
 
   /* Print the hexadecimal digits of the address */
-  for (int i = (sizeof(void*) * 2 - 1) * 4; i >= 0; i -= 4) {
+  for (i = (sizeof(void*) * 2 - 1) * 4; i >= 0; i -= 4) {
     hex_digit = (address >> i) & 0xF;
 
     if (hex_digit < 10)

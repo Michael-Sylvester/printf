@@ -79,7 +79,7 @@ int _printf(const char *format, ...)
 	    case 'p':
 	      /* print pointer function */
 	      p = va_arg(ap, void *);
-	      sum += print_pointer(&p);
+	      sum += print_pointer(p);
 	      format++;
 	      break;
 	    default:
