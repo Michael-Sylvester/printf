@@ -19,6 +19,8 @@
 #define S_LONG 2
 #define S_SHORT 1
 
+/* funtions calls for format specifier implementation */
+int print_unknown(int add,const char *format);
 int collab_putchar(char c);
 int _printf(const char *format, ...);
 int print_string(char *str);
@@ -33,6 +35,23 @@ int print_hexa_upper(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 int print_hexa(va_list types, char map_to[], char buffer[],
 int flags, char flag_ch, int width, int precision, int size);
+
+
+
+
+
+
+/* printf_ops function declarations to call above functions*/
+int call_d(char *format);
+int call_i(char *format);
+int call_c(char *format);
+int call_s(char *format);
+int call_b(char *format);
+int call_perc(char *format);
+int call_p(char *format);
+int call_H(char *format);
+int call_h(char *format);
+int call_o(char *format);
 
 
 #endif

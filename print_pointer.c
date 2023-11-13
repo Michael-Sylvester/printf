@@ -19,16 +19,19 @@ int print_pointer(void *ptr)
 
 	/* Print the hexadecimal digits of the address */
 	for (i = (sizeof(void *) * 2 - 1) * 4; i >= 0; i -= 4)
+	{
+		hex_digit = (address >> i) & 0xF;
+
+		if (hex_digit < 10)
 		{
-			hex_digit = (address >> i) & 0xF;
-
-			if (hex_digit < 10)
-				collab_putchar(hex_digit + '0');
-			else
-				collab_putchar(hex_digit + 'a' - 10);
-
-			count++;
+			collab_putchar(hex_digit + '0');
 		}
+		else
+		{
+			collab_putchar(hex_digit + 'a' - 10);
+		}
+		count++;
+	}
 
 	return (count);
 }
