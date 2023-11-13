@@ -12,4 +12,8 @@ int print_string(char * str);
 int print_d(int n);
 int print_int(int n);
 int print_b(int num);
+
+
+int print_pointer(void *);
+
 #endif

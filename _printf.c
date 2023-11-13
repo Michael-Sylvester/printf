@@ -17,8 +17,9 @@ int _printf(const char *format, ...)
   
   char c;
   char * str;
+  void *p;
   va_list ap;
-
+  
   if (format == NULL)
     return (0);
   
@@ -75,7 +76,12 @@ int _printf(const char *format, ...)
 	      sum++;
 	      format++;
 	      break;
-
+	    case 'p':
+	      /* print pointer function */
+	      p = va_arg(ap, void *);
+	      sum += print_pointer(&p);
+	      format++;
+	      break;
 	    default:
 	      collab_putchar('%');
 	      collab_putchar(*format);
