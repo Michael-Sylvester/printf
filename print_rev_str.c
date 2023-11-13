@@ -16,8 +16,8 @@ int print_rev(va_list args)
 		s = "(null)";
 	while (s[b] != '\0')
 		b++;
-	for (a = b - 1; i >= 0; a--)
-		collab_putchar(s[i]);
+	for (a = b - 1; a >= 0; a--)
+		collab_putchar(s[a]);
 	return (b);
 }
 

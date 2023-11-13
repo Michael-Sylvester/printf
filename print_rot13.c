@@ -18,7 +18,7 @@ int print_rot13(va_list args)
 	for (x = 0; s[x]; x++)
 	{
 		z = 0;
-		for (y = 0; al[0] && !k; y++)
+		for (y = 0; al[0] && !z; y++)
 		{
 			if (s[x] == al[y])
 			{
