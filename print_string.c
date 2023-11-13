@@ -1,21 +1,23 @@
 #include "main.h"
 
 /**
- * print_string - writes string to stdout
- * @str: The character to print
- *
- * Return: the cumber of char in the string
- *
+ * print_s - This function prints a string.
+ * @val: The argument passed
+ * Return: the length of the string
  */
-int print_string(char *str)
+
+int print_s(va_list val)
 {
-	int count = 0;  /* iterates through string */
+	char *s;
+	int x, len;
 
-	while (str[count])
-	{
-		collab_putchar(str[count]);
-		count++;
-	} /* end of while loop */
+	s = va_arg(val, char *);
+	if (s == NULL)
+		s = "(null)";
 
-	return (count - 1);
+	len = _strlen(s);
+	for (x = 0; x < len; x++)
+		collab_putchar(s[x]);
+
+	return (len);
 }

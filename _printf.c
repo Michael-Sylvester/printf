@@ -79,7 +79,7 @@ int _printf_specifier(char format, va_list ap)
 		format++;
 		break;
 	case 's':                   /* print string function */
-		sum += print_string(va_arg(ap, char *));
+		sum +=
 		format++;
 		break;
 	case 'b':                   /* print binary function */

@@ -12,7 +12,7 @@
 /* funtions calls for format specifier implementation */
 int collab_putchar(char c);
 int _printf(const char *format, ...);
-int print_string(char *str);
+int print_s(va_list val);
 int print_d(int n);
 int print_int(int n);
 int print_b(int num);
@@ -23,7 +23,6 @@ int print_hex(va_list val);
 int print_hex_more(unsigned int num);
 int print_rot13(va_list args);
 int print_rev(va_list args);
-
 
 
 
