@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 					break;
 				} /* end of switch statement */
 		}     /* end of if statement */
-		/* if keyword not available print current member of format string */
+
 		collab_putchar(*format);
 		sum++;
 		format++;
@@ -46,6 +46,7 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (sum);
 }
+
 /**
  *print_unknown - printf unknown format specifiers
  *@add: number of char printed
@@ -124,7 +125,12 @@ int _printf_specifier2(char format, va_list ap)
 		{
 		case 'o':
 			sum += print_octal(va_arg(ap, unsigned int));
-			format++;
+			break;
+		case 'r':
+			sum += print_rev(ap);
+			break;
+		case 'R':
+			sum += print_rot13(ap);
 			break;
 		default:
 			sum += print_unknown(2, format);
