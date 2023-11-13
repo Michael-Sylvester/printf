@@ -1,5 +1,9 @@
 #include "main.h"
 
+int convert_size_unsgnd(unsigned long int num, int size);
+int write_unsgnd(int arg1, int arg2, char buffer[],
+int flags, int width, int precision, int size);
+
 /**
  * print_hexadecimal - This prints an unsigned number in hexadec
  * @types: The list of arguments passed
