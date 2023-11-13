@@ -8,6 +8,14 @@
 #include <limits.h>
 #include <string.h>
 
+#define BUFF_SIZE 1024
+#define UNUSED(x) (void)(x)
+#define F_MINUS 1
+#define F_PLUS 2
+#define F_ZERO 4
+#define F_HASH 8
+#define F_SPACE 16
+
 int collab_putchar(char c);
 int _printf(const char *format, ...);
 int print_string(char *str);
