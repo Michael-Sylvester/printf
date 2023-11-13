@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_pointer - This function prints a decimal
+ * print_pointer - This function prints the address a pointer points to.
  * @ptr: The argument to print
  * Return: An integer
  */

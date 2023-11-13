@@ -2,7 +2,7 @@
 
 /**
  * print_b - This function prints binary number
- * @val: The function param
+ * @num: The function param
  * Return: An integer
  */
 int print_b(int num)

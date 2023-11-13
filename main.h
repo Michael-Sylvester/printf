@@ -26,7 +26,7 @@ int print_d(int n);
 int print_int(int n);
 int print_b(int num);
 int print_pointer(void *);
-
+int print_octal(unsigned int);
 int print_hexadecimal(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 int print_hexa_upper(va_list types, char buffer[],

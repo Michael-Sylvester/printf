@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
   int i;
   int sum = 0;
   unsigned int b;
+  unsigned int oct;
   
   char c;
   char * str;
@@ -80,6 +81,23 @@ int _printf(const char *format, ...)
 	      /* print pointer function */
 	      p = va_arg(ap, void *);
 	      sum += print_pointer(p);
+	      format++;
+	      break;
+	    case 'h':
+
+
+
+
+	      break;
+	    case 'H':
+
+
+
+
+	      break;
+	    case 'o':
+	      oct = va_arg(ap, unsigned int);
+	      sum += print_octal(oct);
 	      format++;
 	      break;
 	    default:

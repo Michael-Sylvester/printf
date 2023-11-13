@@ -2,7 +2,7 @@
 
 /**
  * print_i - This function prints an integer
- * @args: Arguments to print
+ * @n: Arguments to print
  * Return: An integer
  */
 int print_int(int n)

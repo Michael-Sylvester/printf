@@ -2,7 +2,7 @@
 
 /**
  * print_d - This function prints a decimal
- * @args: The argument to print
+ * @n: The argument to print
  * Return: An integer
  */
 
