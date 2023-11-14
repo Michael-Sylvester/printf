@@ -26,19 +26,22 @@ int _printf(const char *format, ...)
 				{
 				case 'd':					/* print interger function */
 					sum += print_d(va_arg(ap, int));
+					format++;
 					break;
 				case 'i':					/* print integer function */
 					sum += print_int(va_arg(ap, int));
+					format++;
 					break;
 				default:		/* continue switch in next function */
 					letter = *format;
 					sum += _printf_specifier(letter, ap);
+					format++;
 					break;
 				} /* end of switch statement */
-			format++;
+
 		}     /* end of if statement */
 		else{
-			putchar(*format);
+			write(1, format, 1);
 		sum++;
 		format++;
 		} /* end of else statement */
@@ -134,6 +137,8 @@ int _printf_specifier2(char format, va_list ap)
 		case 'R':
 			sum += print_rot13(ap);
 			break;
+		case 'u':
+			break; 
 		default:
 			/*sum += print_unknown(format);*/
 			break;
