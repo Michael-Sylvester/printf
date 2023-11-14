@@ -8,14 +8,14 @@ int main(void)
   int ans = 0;
 
   ans = _printf("%s", str2);
-  puts("");
-  _printf("_Total = %i", ans);
-  puts("");  
 
-  ans =  print_string(str2);
-  puts("");
-  _printf("_Total = %i", ans);
-  puts("");
+  _printf("  Direct Total = %i\n", ans);
+
+
+    ans =  _printf("%s", "Why_Why_?_");
+
+   _printf("  string Total = %i", ans);
+
   /*
 
   ans = printf("1. %s", str_1);

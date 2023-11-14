@@ -10,7 +10,7 @@ int print_s(va_list val)
 {
 	char *s;
 	int x, len;
-
+	int *p_len = &len;
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
@@ -19,5 +19,5 @@ int print_s(va_list val)
 	for (x = 0; x < len; x++)
 		collab_putchar(s[x]);
 
-	return (len);
+	return (*p_len + 1);
 }

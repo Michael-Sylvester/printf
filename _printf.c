@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				default:
 					letter = *format;
 					format++;
-					_printf_specifier(letter, ap);
+					sum += _printf_specifier(letter, ap);
 					break;
 				} /* end of switch statement */
 		}     /* end of if statement */
@@ -53,12 +53,12 @@ int _printf(const char *format, ...)
  *@format: pointer to the format specifer
  *Return: the number of char printed
  */
-int print_unknown(int add, char format)
+int print_unknown(char format)
 {
-	collab_putchar('%');
-	collab_putchar(format);
-	format++;
-	return (add);
+	int sum = 0;
+	sum += collab_putchar('%');
+	sum += collab_putchar(format);
+	return (sum);
 }
 
 
@@ -71,38 +71,37 @@ int print_unknown(int add, char format)
 int _printf_specifier(char format, va_list ap)
 {
 	int sum = 0;
-
+	char c;
+	unsigned int ui;
+	void *vp;
 	switch (format)
 	{
 	case 'c':                   /* print character function */
-		collab_putchar((char)va_arg(ap, int));
+		c = (char)va_arg(ap, int);
+		collab_putchar(c);
 		sum++;
-		format++;
 		break;
 	case 's':                   /* print string function */
-		sum +=
-		format++;
+		sum += print_s(ap);
 		break;
 	case 'b':                   /* print binary function */
-		sum += print_b(va_arg(ap, unsigned int));
-		format++;
+		ui = va_arg(ap, unsigned int);
+		sum += print_b(ui);
 		break;
 	case '%':                   /* print % sign */
 		collab_putchar(format);
 		sum++;
-		format++;
 		break;
 	case 'p':                   /* print pointer function */
-		sum += print_pointer(va_arg(ap, void *));
+		vp = va_arg(ap, void *);
+		sum += print_pointer(vp);
 		format++;
 		break;
 	case 'x':
 		sum += print_hex(ap);
-		format++;
 		break;
 	case 'X':
 		sum += print_hex_more(va_arg(ap, unsigned int));
-		format++;
 		break;
 	default:
 		_printf_specifier2(format, ap);
@@ -120,11 +119,13 @@ int _printf_specifier(char format, va_list ap)
 int _printf_specifier2(char format, va_list ap)
 {
 	int sum = 0;
-
+	unsigned int ui;
+	
 	switch (format)
 		{
 		case 'o':
-			sum += print_octal(va_arg(ap, unsigned int));
+			ui = va_arg(ap, unsigned int);
+			sum += print_octal(ui);
 			break;
 		case 'r':
 			sum += print_rev(ap);
@@ -133,7 +134,7 @@ int _printf_specifier2(char format, va_list ap)
 			sum += print_rot13(ap);
 			break;
 		default:
-			sum += print_unknown(2, format);
+			sum += print_unknown(format);
 			break;
 		}
 	return (sum);
