@@ -6,18 +6,20 @@
  * Return: the length of the string
  */
 
-int print_s(va_list val)
+int print_s(va_list args)
 {
-	char *s;
-	int x, len;
-	int *p_len = &len;
-	s = va_arg(val, char *);
-	if (s == NULL)
-		s = "(null)";
+	const char *arg = va_arg(args, const char *);
+	int len_s = 0;
 
-	len = strlen(s);
-	for (x = 0; x < len; x++)
-		collab_putchar(s[x]);
+	if (arg == NULL)
+	{
+		arg = "(null)";
+	}
 
-	return (*p_len + 1);
+	while (arg[len_s] != '\0')
+	{
+		len_s++;
+	}
+	write(1, arg, len_s);
+	return (len_s);
 }
