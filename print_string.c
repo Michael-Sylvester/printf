@@ -2,7 +2,7 @@
 
 /**
  * print_s - This function prints a string.
- * @val: The argument passed
+ * @args: The argument passed
  * Return: the length of the string
  */
 
