@@ -31,6 +31,6 @@ int print_rev(va_list args);
 /* printf_ops function declarations to call above functions*/
 int _printf_specifier(char format, va_list ap);
 int _printf_specifier2(char format, va_list ap);
-int print_unknown(int add, char format);
+int print_unknown(char format);
 
 #endif

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test1.c -o t1
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test2.c -o t2
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test3.c -o t3
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test4.c -o t4
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test5.c -o t5
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test6.c -o t6
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test7.c -o t7
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test8.c -o t8
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test9.c -o t9
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_10.c -o t_10
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_11.c -o t_11
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_12.c -o t_12
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_13.c -o t_13
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_14.c -o t_14
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_15.c -o t_15
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_16.c -o t_16
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_17.c -o t_17
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_18.c -o t_18
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_19.c -o t_19
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_20.c -o t_20
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_21.c -o t_21
