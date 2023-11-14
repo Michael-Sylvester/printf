@@ -40,10 +40,11 @@ int _printf(const char *format, ...)
 				} /* end of switch statement */
 
 		}     /* end of if statement */
-		else{
+		else
+		{
 			write(1, format, 1);
-		sum++;
-		format++;
+			sum++;
+			format++;
 		} /* end of else statement */
 	} /* end of while loop */
 	va_end(ap);
@@ -81,7 +82,7 @@ int _printf_specifier(char format, va_list ap)
 	{
 	case 'c':                   /* print character function */
 		c = (char)va_arg(ap, int);
-		collab_putchar(c);
+		write(1, &c, 1);
 		sum++;
 		break;
 	case 's':                   /* print string function */
@@ -92,7 +93,7 @@ int _printf_specifier(char format, va_list ap)
 		sum += print_b(ui);
 		break;
 	case '%':                   /* print % sign */
-		collab_putchar(format);
+		write(1, &format, 1);
 		sum++;
 		break;
 	case 'p':                   /* print pointer function */
@@ -124,6 +125,7 @@ int _printf_specifier2(char format, va_list ap)
 {
 	int sum = 0;
 	unsigned int ui;
+	char c;
 	
 	switch (format)
 		{
@@ -141,6 +143,13 @@ int _printf_specifier2(char format, va_list ap)
 			break; 
 		default:
 			/*sum += print_unknown(format);*/
+			c = '%';
+			if (format != '\0')
+			{
+			write(1, &c, 1);
+			write(1, &format, 1);
+			sum += 2;
+			}
 			break;
 		}
 	return (sum);
