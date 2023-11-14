@@ -23,7 +23,7 @@ int print_hex(va_list val);
 int print_hex_more(unsigned int num);
 int print_rot13(va_list args);
 int print_rev(va_list args);
-
+int print_ui(unsigned int num);
 
 /* printf_ops function declarations to call above functions*/
 int _printf_specifier(char format, va_list ap);
