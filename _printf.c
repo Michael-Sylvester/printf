@@ -10,8 +10,6 @@ int _printf(const char *format, ...)
 {
 	char letter;
 	int sum = 0;
-	/*int buffer_index = 0;
-	char buffer[BUFF_SIZE];*/
 	va_list ap;
 
 	if (format == NULL)
@@ -60,6 +58,7 @@ int _printf(const char *format, ...)
 int print_unknown(char format)
 {
 	int sum = 0;
+
 	sum += collab_putchar('%');
 	sum += collab_putchar(format);
 	return (sum);
@@ -78,6 +77,7 @@ int _printf_specifier(char format, va_list ap)
 	char c;
 	unsigned int ui;
 	void *vp;
+
 	switch (format)
 	{
 	case 'c':                   /* print character function */
@@ -126,7 +126,7 @@ int _printf_specifier2(char format, va_list ap)
 	int sum = 0;
 	unsigned int ui;
 	char c;
-	
+
 	switch (format)
 		{
 		case 'o':
@@ -140,7 +140,7 @@ int _printf_specifier2(char format, va_list ap)
 			sum += print_rot13(ap);
 			break;
 		case 'u':
-			break; 
+			break;
 		default:
 			/*sum += print_unknown(format);*/
 			c = '%';
