@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+echo "Compilation starting"
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test1.c -o t1
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test2.c -o t2
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test3.c -o t3
@@ -22,3 +22,5 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_18.c -o t
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_19.c -o t_19
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_20.c -o t_20
 gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format ../*.c test_21.c -o t_21
+
+echo "Compilation finished"

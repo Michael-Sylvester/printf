@@ -9,13 +9,14 @@
 int _printf(const char *format, ...)
 {
 	char letter;
-	int sum;
+	int sum = 0;
+	/*int buffer_index = 0;
+	char buffer[BUFF_SIZE];*/
 	va_list ap;
 
 	if (format == NULL)
 		return (0);
 	va_start(ap, format);
-	sum = 0;
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -25,23 +26,22 @@ int _printf(const char *format, ...)
 				{
 				case 'd':					/* print interger function */
 					sum += print_d(va_arg(ap, int));
-					format++;
 					break;
 				case 'i':					/* print integer function */
 					sum += print_int(va_arg(ap, int));
-					format++;
 					break;
-				default:
+				default:		/* continue switch in next function */
 					letter = *format;
-					format++;
 					sum += _printf_specifier(letter, ap);
 					break;
 				} /* end of switch statement */
+			format++;
 		}     /* end of if statement */
-
-		collab_putchar(*format);
+		else{
+			putchar(*format);
 		sum++;
 		format++;
+		} /* end of else statement */
 	} /* end of while loop */
 	va_end(ap);
 	return (sum);
@@ -101,10 +101,11 @@ int _printf_specifier(char format, va_list ap)
 		sum += print_hex(ap);
 		break;
 	case 'X':
-		sum += print_hex_more(va_arg(ap, unsigned int));
+		ui = va_arg(ap, unsigned int);
+		sum += print_hex_more(ui);
 		break;
 	default:
-		_printf_specifier2(format, ap);
+		sum += _printf_specifier2(format, ap);
 		break;
 	}
 	return (sum);
@@ -134,7 +135,7 @@ int _printf_specifier2(char format, va_list ap)
 			sum += print_rot13(ap);
 			break;
 		default:
-			sum += print_unknown(format);
+			/*sum += print_unknown(format);*/
 			break;
 		}
 	return (sum);
