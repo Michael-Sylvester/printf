@@ -8,6 +8,7 @@
 #include <limits.h>
 #include <string.h>
 
+#define BUFF_SIZE 1024
 
 /* funtions calls for format specifier implementation */
 int collab_putchar(char c);
@@ -23,7 +24,8 @@ int print_hex(va_list val);
 int print_hex_more(unsigned int num);
 int print_rot13(va_list args);
 int print_rev(va_list args);
-
+int print_unsigned(va_list types, char buffer[]);
+int write_unsgnd(int index, char buffer[]);
 
 
 
