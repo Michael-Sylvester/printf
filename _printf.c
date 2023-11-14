@@ -140,6 +140,8 @@ int _printf_specifier2(char format, va_list ap)
 			sum += print_rot13(ap);
 			break;
 		case 'u':
+			ui = va_arg(ap, unsigned int);
+			sum += print_ui(ui);
 			break;
 		default:
 			/*sum += print_unknown(format);*/
