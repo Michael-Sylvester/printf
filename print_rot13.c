@@ -24,7 +24,6 @@ int print_rot13(va_list args)
 			{
 				collab_putchar(bl[y]);
 				counter++;
-				z = 1;
 			}
 		}
 		if (!z)
